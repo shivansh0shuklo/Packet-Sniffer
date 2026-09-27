@@ -1,3 +1,8 @@
+#will handel the terminal the docker and the database  and the packet coming from the cpp via the json 
+#strng and like show then in the terminal and store them inthe databse 
+
+
+
 import socket
 
 PORT  = 5555
