@@ -66,23 +66,40 @@ Compile with optimizations and strict warning flags:
 
 ```bash
 g++ -O2 -Wall -Wextra -std=c++17 sniffer_core.cpp -o sniffer
-
-
-## Running Packet Sniffer
-
-#1> with sudo 
- 
-sudo ./sniffer
-
-#2> without sudo(for security)
-sudo setcap cap_net_raw,cap_net_admin=eip ./sniffer
-./sniffer
+'''
 
 ---
 
+## Build Instructions
 
-##Testing -->
+Compile with optimizations and strict warning flags:
 
+```bash
+g++ -O2 -Wall -Wextra -std=c++17 sniffer_core.cpp -o sniffer
+```
+
+---
+
+## Running Packet Sniffer
+
+### 1. With `sudo`
+
+```bash
+sudo ./sniffer
+```
+
+### 2. Without `sudo` (Recommended)
+
+```bash
+sudo setcap cap_net_raw,cap_net_admin=eip ./sniffer
+./sniffer
+```
+
+---
+
+## Testing
+
+```bash
 # 1. Test ICMP parsing (Type 8 echo request, Type 0 reply)
 ping -c 2 1.1.1.1
 
@@ -90,5 +107,6 @@ ping -c 2 1.1.1.1
 dig google.com
 
 # 3. Test TCP parsing & flag decoding (SYN / ACK / PSH)
-curl -I [http://example.com](http://example.com)
+curl -I http://example.com
+```
 
