@@ -20,7 +20,7 @@ A lightweight, high-performance Layer 2–Layer 4 network packet sniffer written
 
 ## Architecture Overview
 
-'''bash
+
 [ Ethernet Frame (Layer 2) ] ──► 14-byte ethhdr offset
 │
 ▼
@@ -42,7 +42,6 @@ A lightweight, high-performance Layer 2–Layer 4 network packet sniffer written
     ▼                       ▼
     Terminal Display            JSON Serialization
     (ANSI Color Coded)          (tojson() for IPC)
-'''
 
 ---
 
