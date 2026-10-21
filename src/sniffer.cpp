@@ -56,12 +56,23 @@ int main(){
             pkt.src_port = ntohs(tcp->source);
             pkt.des_port = ntohs(tcp->dest);
             string total_flag = "";
-            if(tcp->syn){total_flag.append("SYN ");}
-            if(tcp->ack){total_flag.append("ACK ");}
-            if(tcp->fin){total_flag.append("FIN ");}
-            if(tcp->psh){total_flag.append("PSH ");}
-            if(tcp->urg){total_flag.append("URG ");}
-            if(tcp->rst){total_flag.append("RST ");}
+            if(tcp->syn){
+                total_flag.append("SYN ");
+            }
+            if(tcp->ack){
+                total_flag.append("ACK ");
+            }
+            if(tcp->fin){
+                total_flag.append("FIN ");
+            }
+            if(tcp->psh){
+                total_flag.append("PSH ");
+            }
+            if(tcp->urg){total_flag.append("URG ");
+            }
+            if(tcp->rst){
+                total_flag.append("RST ");
+            }
             pkt.flags = total_flag;
         }else if(iph->protocol == IPPROTO_UDP){
             if(data_size < (ssize_t)(sizeof(struct ethhdr)+iphdr_len+sizeof(struct udphdr))){
